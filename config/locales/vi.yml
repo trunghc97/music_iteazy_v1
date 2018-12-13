@@ -104,6 +104,12 @@ vi:
     add_playlist:
       select_playlist: Chọn playlist
       select: Chọn
+    like:
+      btn_like: Thích
+    dislike:
+      btn_dislike: Bỏ thích
+    count_likes:
+      like_count: Lượt thích
 
   singers:
     show:

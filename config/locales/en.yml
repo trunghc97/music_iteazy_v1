@@ -104,6 +104,12 @@ en:
     add_playlist:
       select_playlist: Select playlist
       select: Select
+    like:
+      btn_like: Like
+    dislike:
+      btn_dislike: Dislike
+    count_likes:
+      like_count: Like
 
   singers:
     show:

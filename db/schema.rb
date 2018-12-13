@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_01_014335) do
+ActiveRecord::Schema.define(version: 2018_12_13_093356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,12 +41,12 @@ ActiveRecord::Schema.define(version: 2018_12_01_014335) do
   end
 
   create_table "likeds", force: :cascade do |t|
-    t.bigint "song_id"
     t.integer "likeable_id"
     t.string "likeable_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["song_id"], name: "index_likeds_on_song_id"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_likeds_on_user_id"
   end
 
   create_table "playlist_songs", force: :cascade do |t|
@@ -109,7 +109,6 @@ ActiveRecord::Schema.define(version: 2018_12_01_014335) do
   add_foreign_key "comments", "users"
   add_foreign_key "genre_songs", "genres"
   add_foreign_key "genre_songs", "songs"
-  add_foreign_key "likeds", "songs"
   add_foreign_key "playlist_songs", "playlists"
   add_foreign_key "playlist_songs", "songs"
   add_foreign_key "playlists", "users"
