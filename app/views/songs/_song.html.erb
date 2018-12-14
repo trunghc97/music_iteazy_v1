@@ -3,8 +3,10 @@
     <%= image_tag "play.png", width: 120 %>
   </div>
   <div class="col-md-4">
-    <p class="song-title">
+    <p class="song-title text-white">
       <%= link_to song.title, song %>
+      &nbsp - &nbsp
+      <%= link_to song.singer.name, song.singer %>
     </p>
 
     <p class="song-date text-white">
@@ -23,7 +25,7 @@
           <source src="<%= song.song_url %>" type="audio/mp3">
         </audio>
       </div>
-      <div class="mb-5 col-3 pl-0">
+      <div class="mb-5 col-9 pl-0">
         <%= form_with url: playlist_song_path, :method => :delete do %>
           <%= hidden_field_tag :song_id, song.id %>
           <%= submit_tag t(".remove_playlist"), class: "btn btn-danger text-capitalize" %>

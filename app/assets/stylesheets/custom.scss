@@ -1,7 +1,7 @@
 @import 'color.scss';
 
 body {
-  background: $midnightblue
+  background: $midnightblue;
 }
 /*---------------Nav-Top---------------*/
 .nav-top {
@@ -186,8 +186,7 @@ audio {
 
 
 .notice {
-  background-color: $green-notice;
-  border-radius: 5px;
+  color: $green-notice;
 }
 
 .vietnam-flag {
@@ -312,11 +311,15 @@ footer {
 }
 
 .asb {
-  opacity: 0.7
+  opacity: 0.7;
 }
 
 .asb:hover {
-  opacity: 1
+  opacity: 1;
+}
+
+.modal-add-playlist {
+  color: $black;
 }
 
 .rotate-img {

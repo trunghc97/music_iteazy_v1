@@ -73,7 +73,7 @@
     <% end %>
   </div>
   <aside class="col-md-3 hot-music">
-    <%= link_to image_tag("hot-music.jpg", alt: (t ".hot_music"), height: 100, width: 260), song_path @feed_items, class: "pb-3 asb" %>
+    <%= link_to image_tag("hot-music.jpg", alt: (t ".hot_music"), height: 100, width: 260), song_path(@feed_items), class: "pb-3 asb" %>
     <%= link_to image_tag("love-music.jpg", alt: (t ".hot-music"), height: 100, width: 260), "#", class: "pb-3 asb" %>
     <%= link_to image_tag("vpop-music.jpg", alt: (t ".hot-music"), height: 100, width: 260), "#", class: "pb-3 asb" %>
     <%= link_to image_tag("acoustic-music.jpg", alt: (t ".hot-music"), height: 100, width: 260), "#", class: "pb-3 asb" %>
