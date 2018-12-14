@@ -7,6 +7,5 @@
     <%= f.select :playlist_id, options_for_select(@playlist.map(&:name)),
       {class: "form-control"}, {include_blank: false} %>
 
-    <%= f.submit t(".select"), class: "btn btn-primary form-control" %>
-  <% end %>
-</div>
+  <%= f.submit t(".select"), class: "btn btn-success form-control" %>
+<% end %>

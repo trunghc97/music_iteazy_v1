@@ -1,18 +1,10 @@
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
-      <h1>
+      <h1 class="text-white">
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
     </section>
   </aside>
-  <div class="col-md-8">
-    <% if @user.playlists.any? %>
-      <ol class="playlist">
-        <%= render @playlists %>
-      </ol>
-      <%= paginate @playlists, theme: "twitter-bootstrap-4" %>
-    <% end %>
-  </div>
 </div>

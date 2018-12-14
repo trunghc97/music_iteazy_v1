@@ -1,18 +1,18 @@
 <li>
-  <div class="col-2">
+  <div class="col-md-2">
     <%= image_tag "play.png", width: 120 %>
   </div>
-  <div class="col-10">
+  <div class="col-md-4">
     <p class="song-title">
       <%= link_to song.title, song %>
     </p>
 
-    <p class="song-date">
+    <p class="song-date text-white">
       <%= t "songs.post_at" %>
       <%= l song.created_at %>
     </p>
 
-    <p class="song-view">
+    <p class="song-view text-white">
       <%= t "songs.view" %>
       <%= song.view %>
     </p>

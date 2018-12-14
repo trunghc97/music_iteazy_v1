@@ -16,7 +16,7 @@ class PlaylistsController < ApplicationController
       redirect_to playlists_path
     else
       @playlist_items = []
-      render "playlist/index"
+      render "playlists/index"
     end
   end
 

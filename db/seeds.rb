@@ -105,6 +105,9 @@ Genre.create! title: "Ballad"
 Genre.create! title: "Rock"
 Genre.create! title: "R&B"
 Genre.create! title: "New"
+Genre.create! title: "Acoutic"
+Genre.create! title: "EDM"
+Genre.create! title: "LoveSong"
 
 GenreSong.create! genre_id: 1,
                   song_id: 1
@@ -120,6 +123,14 @@ GenreSong.create! genre_id: 3,
                   song_id: 2
 GenreSong.create! genre_id: 4,
                   song_id: 3
+GenreSong.create! genre_id: 5,
+                  song_id: 6
+GenreSong.create! genre_id: 5,
+                  song_id: 2
+GenreSong.create! genre_id: 7,
+                  song_id: 2
+GenreSong.create! genre_id: 8,
+                  song_id: 2
 
 10.times do |n|
   singer_id = rand(1..10)

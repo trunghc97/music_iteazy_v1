@@ -4,21 +4,26 @@ en:
         for_you: Just for you
         pre: Previous
         next: Next
-        album: Album Population
+        album: Genres Population
+        other: Other album
         bxh: Hot Topic
         chrismas_song: The chrismas song
         vnvd: VietNam champion
   layouts:
     application:
-      language_vi: "Vietnamese"
-      language_en: "English"
+      english: English
+      vietnamese: Vietnamese
+      music_app: Music App
     header:
       login: Login
+      account: Account
+      playlist: Playlist
+      search: Search...
   application:
     require_login: Please log in.
   playlists:
     destroy:
-      playlists_deleted: "Playlist deleted."
+      playlist_deleted: "Playlist deleted."
       playlist_created: "Playlist created!"
       delete_failed: "Delete Failed."
       playlist_updated: "Update success."
@@ -30,6 +35,10 @@ en:
       update_faild: "Update fail"
     create:
       playlist_created: "Playlist created"
+    playlist:
+      you_sure: "Are you sure?"
+    index:
+      playlist: Playlist
   sessions:
     create:
       invalid: Invalid email or password
@@ -56,10 +65,8 @@ en:
 
   layouts:
     application:
-      music_app: Music App
+      music_app: App nghe nhạc
     header:
-      playlist: Playlist
-      login: Login
       all_song: Songs
       collection: Collection
       upload: Upload
@@ -96,6 +103,7 @@ en:
       comments_count: " Comments"
       select_pl: Choose your playlist
       add_playlist: ADD TO PLAYLIST
+      genres: Genres
     song:
       confirm: Are You Sure?
       remove_playlist: Remove From Playlist
@@ -115,6 +123,7 @@ en:
     show:
       singer: "Singer Infomation"
       description: "Description: "
+      list-song: List song
 
   comments:
     type: "Type comments here ..."

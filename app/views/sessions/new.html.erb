@@ -1,18 +1,18 @@
-<h1><%= t ".login" %></h1>
+<h1 class="text-white"><%= t ".login" %></h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3 mx-auto">
     <%= form_for :session, url: login_path do |f| %>
 
-      <%= f.label :email %>
+      <%= f.label :email, class: "text-white" %>
       <%= f.email_field :email, class: "form-control" %>
 
-      <%= f.label :password %>
+      <%= f.label :password, class: "text-white" %>
       <%= f.password_field :password, class: "form-control" %>
 
-      <%= f.submit t ".login", class: "btn btn-primary" %>
+      <%= f.submit t ".login", class: "btn btn-success" %>
     <% end %>
 
-    <p><%= t ".new_user" %><%= link_to t(".sign_up_now"), signup_path %></p>
+    <p class="text-white"><%= t ".new_user" %><%= link_to t(".sign_up_now"), signup_path %></p>
   </div>
 </div>

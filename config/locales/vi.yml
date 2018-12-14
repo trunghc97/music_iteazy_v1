@@ -4,16 +4,21 @@ vi:
         for_you: Dành cho bạn
         pre: Xem lại
         next: Tiếp theo
-        album: Album nghe nhiều
+        album: Thể loại nghe nhiều
+        other: Ablum Khác
         bxh: Chủ đề hot
         chrismas_song: Nhạc giáng sinh
         vnvd: Việt Nam vô địch
   layouts:
     application:
-      language_vi: "Tiếng Việt"
-      language_en: "Tiếng Anh"
+      english: Tiếng Anh
+      vietnamese: Tiếng Việt
+      music_app: Ứng dụng nghe nhạc
     header:
       login: Đăng nhập
+      account: Tài khoản
+      playlist: Danh sách phát
+      search: Tìm kiếm...
   application:
     require_login: "Hãy đăng nhập"
   playlists:
@@ -22,7 +27,7 @@ vi:
       playlist_created: "Danh sách phát mới tạo thành công"
       delete_failed: "Lỗi xóa Danh sách phát"
       playlist_updated: "Cập nhật Danh sách phát thành công."
-      you_sure: "Bạn chắc chứ?"
+      you_sure: "Bạn có chắc chắn muốn xóa không?"
     edit:
       update_playlist: "Cập nhật Danh sách phát"
     update:
@@ -30,6 +35,10 @@ vi:
       update_faild: "Cập nhật lỗi"
     create:
       playlsit_created: "Tạo mới danh sách phát thành công"
+    playlist:
+      you_sure: "Are you sure?"
+    index:
+      playlist: Danh sách phát
   sessions:
     create:
       invalid: Email hoặc mật khẩu không đúng
@@ -94,15 +103,14 @@ vi:
     show:
       lyrics: "Lời: "
       comments_count: "Nhận xét"
-      select_pl: Chọn playlist
-      add_playlist: Thêm vào playlist
+      genres: Thể loại
+      select_pl: Lựa chọn danh sách phát
+      add_playlist: Thêm vào danh sách phát
     song:
-      confirm: Bạn có chắc chắn không?
-      remove_playlist: Xóa khỏi playlist
-      edit: Sửa
-      delete: Xóa
+        confirm: Bạn có chắc chắn không?
+        remove_playlist: Xóa khỏi danh sách
     add_playlist:
-      select_playlist: Chọn playlist
+      select_playlist: Chọn danh sách phát
       select: Chọn
     like:
       btn_like: Thích
@@ -115,6 +123,7 @@ vi:
     show:
       singer: "Thông tin ca sĩ"
       description: "Miêu tả: "
+      list-song: Danh sách bài hát
 
   comments:
     type: "Nhập nhận xét ..."

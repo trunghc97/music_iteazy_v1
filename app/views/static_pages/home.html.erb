@@ -31,48 +31,18 @@
     <div class="just-for-u">
       <h5 class="title"><%= t ".for_you" %></h5>
       <ul class="list-items">
+        <% @list_songs.each.with_index(0) do |list, index| %>
         <li class="items d-flex align-items-center">
-          <%= link_to image_tag("play.png", class: "avatar"), "#" %>
+          <% if index % 2 == 0 %>
+            <%= link_to image_tag("noel", class: "avatar"), "#" %>
+          <% else %>
+            <%= link_to image_tag("vnvd", class: "avatar"), "#" %>
+          <% end %>
           <div class="present">
-            <%= link_to "Thu cuối", "#", class: "name" %>
+            <%= link_to list.title, song_path(list.id), class: "name" %>
           </div>
         </li>
-        <li class="items d-flex align-items-center">
-          <%= link_to image_tag("play.png", class: "avatar"), "#" %>
-          <div class="present">
-            <%= link_to "Thu cuối", "#", class: "name" %>
-          </div>
-        </li>
-        <li class="items d-flex align-items-center">
-          <%= link_to image_tag("play.png", class: "avatar"), "#" %>
-          <div class="present">
-            <%= link_to "Thu cuối", "#", class: "name" %>
-          </div>
-        </li>
-        <li class="items d-flex align-items-center">
-          <%= link_to image_tag("play.png", class: "avatar"), "#" %>
-          <div class="present">
-            <%= link_to "Thu cuối", "#", class: "name" %>
-          </div>
-        </li>
-        <li class="items d-flex align-items-center">
-          <%= link_to image_tag("play.png", class: "avatar"), "#" %>
-          <div class="present">
-            <%= link_to "Thu cuối", "#", class: "name" %>
-          </div>
-        </li>
-        <li class="items d-flex align-items-center">
-          <%= link_to image_tag("play.png", class: "avatar"), "#" %>
-          <div class="present">
-            <%= link_to "Thu cuối", "#", class: "name" %>
-          </div>
-        </li>
-        <li class="items d-flex align-items-center">
-          <%= link_to image_tag("play.png", class: "avatar"), "#" %>
-          <div class="present">
-            <%= link_to "Thu cuối", "#", class: "name" %>
-          </div>
-        </li>
+        <% end %>
       </ul>
     </div>
   </aside>
@@ -89,60 +59,40 @@
 
 <div class="row">
   <div class="col-md-9">
-    <div class="card text-center mb-3" style="width:190px; height: 245px">
-      <%= link_to image_tag("noel.jpg", class: "card-img-top"), "#" %>
-      <div class="card-body">
-        <%= link_to t(".chrismas_song"), "#", class: "text-white" %>
+    <% @list_genres.each.with_index(0) do |list_genres, index| %>
+      <div class="card text-center mb-3" style="width:190px; height: 245px">
+        <% if index % 2 == 0 %>
+          <%= link_to image_tag("noel", class: "avatar"), "#" %>
+        <% else %>
+          <%= link_to image_tag("vnvd", class: "avatar"), "#" %>
+        <% end %>
+        <div class="card-body">
+          <%= link_to list_genres.title, genre_path(list_genres.id), class: "text-white" %>
+        </div>
       </div>
-    </div>
-    <div class="card text-center mb-3" style="width:190px; height: 245px">
-      <%= link_to image_tag("vnvd.jpg", class: "card-img-top"), "#" %>
-      <div class="card-body">
-        <%= link_to t(".vnvd"), "#", class: "text-white" %>
-      </div>
-    </div>
-    <div class="card text-center mb-3" style="width:190px; height: 245px">
-      <%= link_to image_tag("noel.jpg", class: "card-img-top"), "#" %>
-      <div class="card-body">
-        <%= link_to t(".chrismas_song"), "#", class: "text-white" %>
-      </div>
-    </div>
-    <div class="card text-center mb-3" style="width:190px; height: 245px">
-      <%= link_to image_tag("vnvd.jpg", class: "card-img-top"), "#" %>
-      <div class="card-body">
-        <%= link_to t(".vnvd"), "#", class: "text-white" %>
-      </div>
-    </div>
-    <div class="card text-center mb-3" style="width:190px; height: 245px">
-      <%= link_to image_tag("noel.jpg", class: "card-img-top"), "#" %>
-      <div class="card-body">
-        <%= link_to t(".chrismas_song"), "#", class: "text-white" %>
-      </div>
-    </div>
-    <div class="card text-center mb-3" style="width:190px; height: 245px">
-      <%= link_to image_tag("vnvd.jpg", class: "card-img-top"), "#" %>
-      <div class="card-body">
-        <%= link_to t(".vnvd"), "#", class: "text-white" %>
-      </div>
-    </div>
-    <div class="card text-center mb-3" style="width:190px; height: 245px">
-      <%= link_to image_tag("noel.jpg", class: "card-img-top"), "#" %>
-      <div class="card-body">
-        <%= link_to t(".chrismas_song"), "#", class: "text-white" %>
-      </div>
-    </div>
-    <div class="card text-center mb-3" style="width:190px; height: 245px">
-      <%= link_to image_tag("vnvd.jpg", class: "card-img-top"), "#" %>
-      <div class="card-body">
-        <%= link_to t(".vnvd"), "#", class: "text-white" %>
-      </div>
-    </div>
-    
+    <% end %>
   </div>
   <aside class="col-md-3 hot-music">
-    <%= link_to image_tag("hot-music.jpg", alt: (t ".hot_music"), height: 100, width: 260), "#", class: "pb-3 asb" %>
+    <%= link_to image_tag("hot-music.jpg", alt: (t ".hot_music"), height: 100, width: 260), song_path @feed_items, class: "pb-3 asb" %>
     <%= link_to image_tag("love-music.jpg", alt: (t ".hot-music"), height: 100, width: 260), "#", class: "pb-3 asb" %>
     <%= link_to image_tag("vpop-music.jpg", alt: (t ".hot-music"), height: 100, width: 260), "#", class: "pb-3 asb" %>
     <%= link_to image_tag("acoustic-music.jpg", alt: (t ".hot-music"), height: 100, width: 260), "#", class: "pb-3 asb" %>
   </aside>
+</div>
+
+<div class="row">
+  <h3 class="text-white"><%= t ".other" %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-9">
+    <% @list_genres.each do |list_genres| %>
+      <div class="card text-center mb-3" style="width:190px; height: 245px">
+        <%= link_to image_tag("noel.jpg", class: "card-img-top"), genre_path(list_genres.id) %>
+        <div class="card-body">
+          <%= link_to list_genres.title, genre_path(list_genres.id), class: "text-white" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

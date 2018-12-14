@@ -4,8 +4,8 @@
       <%= gravatar_for comment.user %>
     </div>
     <div class="col-9">
-      <p class="user"><%= comment.user.name %></p>
-      <p class="content"><%= comment.content %></p>
+      <p class="user text-primary"><%= comment.user.name %></p>
+      <p class="content text-white"><%= comment.content %></p>
       <span class="timestamp">
         <%= "#{time_ago_in_words comment.created_at}" %>
       </span>

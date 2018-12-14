@@ -13,5 +13,5 @@
   <%= f.label :singer, class: "text-white" %>
   <%= f.collection_select :singer_id, Singer.order(:name), :id, :name ,class: "form-control", include_blank: true %>
 
-  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  <%= f.submit yield(:button_text), class: "btn btn-success" %>
 <% end %>

@@ -6,7 +6,7 @@ body {
 /*---------------Nav-Top---------------*/
 .nav-top {
   padding: unset;
-  background: $lightsteelblue;
+  background: $darkslategray;
 }
 
 .div-collapse {
@@ -50,7 +50,7 @@ dropdown-account {
 /*--------------Nav-2------------------*/
 
 .nav-2 {
-  background: $lightsteelblue;
+  background: $darkslategray-light;
   padding: unset
 }
 
@@ -104,16 +104,18 @@ ol {
 
 ol li {
   width: 200px;
-  height: 150px;
+  height: 200px;
   float: left;
-  background-color: $gray-light;
+  background-image: url(playlist.png);
+  background-size: cover;
   margin: 0 3px 3px;
   text-align: center;
+  opacity: 0.8;
   &:hover {
-    background: $black;
-  }
-  &:hover h5 {
-    color: $red
+    opacity: 0.6;
+    h5 {
+      color: $red
+    }
   }
 }
 
@@ -182,6 +184,7 @@ audio {
   margin-bottom: 5px;
 }
 
+
 .notice {
   background-color: $green-notice;
   border-radius: 5px;
@@ -195,7 +198,7 @@ audio {
 /*--------------End-Song-------------------*/
 /*--------------Paginate---------------*/
 .pagination {
-  background: $white;
+  background: $midnightblue
 }
 /*--------------End-Paginate-----------*/
 /*--------------Slider-----------------*/
@@ -239,7 +242,7 @@ audio {
         width: 216px;
         overflow: hidden;
         .name {
-          font-size: 12px;
+          font-size: 14px;
           line-height: 17px;
           color: $gainsboro;
           margin-top: 3px;
@@ -314,4 +317,22 @@ footer {
 
 .asb:hover {
   opacity: 1
+}
+
+.rotate-img {
+  -webkit-animation: rotation 2s infinite linear;
+  border-radius: 50%;
+}
+
+@-webkit-keyframes rotation {
+  from {
+      -webkit-transform: rotate(0deg);
+  }
+  to {
+      -webkit-transform: rotate(359deg);
+  }
+}
+
+.account {
+  width: 122px;
 }

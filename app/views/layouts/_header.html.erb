@@ -26,9 +26,9 @@
         <% end %>
         <% if logged_in? %>
           <li class="dropdown">
-            <%= link_to "#", class: "dropdown-toggle nav-link home-link text-white h-100 pt-2 pl-4",
+            <%= link_to "#", class: "dropdown-toggle account nav-link home-link text-white h-100 pt-2 pl-4",
               data: {toggle: "dropdown"} do %>
-            <%= t ".account" %> <b class="caret"></b>
+            <%= t ".account" %>
             <% end %>
             <ul class="dropdown-menu bg-dark">
               <li><%= link_to t(".profile"), current_user, class: "mx-auto w-50 mx-auto text-white" %></li>
