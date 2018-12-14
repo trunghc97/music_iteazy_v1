@@ -3,3 +3,6 @@ $('.count-song').html('<%= j render "comments/count_comment", song: @song %>');
 $('.div-create').html('<%= j render partial: "comments/comment",\
   collection: @song.comments.ordered %>');
 $(".notice").html("<%= flash.now[:notice] %>");
+setTimeout(function(){
+  $('.notice').html('');
+},3000);
