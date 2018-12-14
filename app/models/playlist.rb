@@ -8,4 +8,5 @@ class Playlist < ApplicationRecord
 
   validates :user_id, presence: true
   validates :name, presence: true, length: {maximum: Settings.length_name}
+  validates_uniqueness_of :user_id, scope: :name
 end

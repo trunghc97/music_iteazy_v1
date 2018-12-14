@@ -21,4 +21,5 @@ Rails.application.routes.draw do
     resources :songs, except: %i(index show)
     resources :comments, except: %i(index show)
   end
+  resources :likeds
 end

@@ -12,6 +12,7 @@ class SongsController < ApplicationController
     @genres = @song.genres
     @playlist = current_user.playlists.order_desc if current_user
                                                      &.playlists&.any?
+    @liked = @song.liked.find_by user_id: current_user.id if current_user
   end
 
   private

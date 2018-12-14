@@ -28,13 +28,25 @@
         <%= t "songs.post_at" %>
         <%= l @song.created_at %>
       </h5>
+      <div class="mb-2">
+        <%= render "count_likes", song: @song %>
+        <% if logged_in? %>
+          <div class="d-inline-block mt-2" id="like-form">
+            <% if @liked %>
+              <%= render "dislike" %>
+            <% else %>
+              <%= render "like" %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
       <% if logged_in? && @playlist %>
         <%= link_to t(".add_playlist"), "#", class:
           "btn btn-primary text-capitalize", data: {toggle: "modal",
           target: "#add_playlist"} %>
-        <%= link_to t(".download"), @song.song_url,
-          class: "btn btn-info text-capitalize" %>
       <% end %>
+      <%= link_to t(".download"), @song.song_url,
+      class: "btn btn-info text-capitalize" %>
     </div>
   </div>
   <div class="modal fade" id="add_playlist" tabindex="-1" role="dialog"
