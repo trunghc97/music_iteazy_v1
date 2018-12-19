@@ -4,7 +4,7 @@ class PlaylistsController < ApplicationController
   before_action :find_playlist, only: %i(edit show update)
 
   def index
-    @playlist = current_user.playlists.build if logged_in?
+    @playlist = current_user.playlists.build if user_signed_in?
     @playlist_items = current_user.playlists.order_desc.page params[:page]
   end
 

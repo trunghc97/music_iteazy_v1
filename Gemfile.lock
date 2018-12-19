@@ -119,6 +119,7 @@ GEM
     ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    hirb (0.7.3)
     i18n (1.1.1)
       concurrent-ruby (~> 1.0)
     jbuilder (2.8.0)
@@ -291,6 +292,7 @@ DEPENDENCIES
   devise
   factory_bot_rails
   faker
+  hirb
   jbuilder (~> 2.5)
   jquery-rails
   kaminari

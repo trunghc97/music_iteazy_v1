@@ -30,7 +30,7 @@
       </h5>
       <div class="mb-2">
         <%= render "count_likes", song: @song %>
-        <% if logged_in? %>
+        <% if user_signed_in? %>
           <div class="d-inline-block mt-2" id="like-form">
             <% if @liked %>
               <%= render "dislike" %>
@@ -40,7 +40,7 @@
           </div>
         <% end %>
       </div>
-      <% if logged_in? && @playlist %>
+      <% if user_signed_in? && @playlist %>
         <%= link_to t(".add_playlist"), "#", class:
           "btn btn-success text-capitalize", data: {toggle: "modal",
           target: "#add_playlist"} %>
@@ -64,7 +64,7 @@
   </div>
 
   <div class="col-9 mb-5">
-    <% if logged_in? %>
+    <% if user_signed_in? %>
       <div class="row">
       <aside class="col-md-12">
         <div class="ajax-form-create">
@@ -97,7 +97,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <% if logged_in? && @playlist %>
+        <% if user_signed_in? && @playlist %>
           <%= render "add_playlist" %>
         <% end %>
       </div>

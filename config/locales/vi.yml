@@ -61,6 +61,9 @@ vi:
         signup: Đăng ký
         create_account: Tạo tài khoản
         password_confirmation: Xác nhận mật khẩu
+    sessions:
+      new:
+        login: Đăng nhập
     create:
       success: Thành công
     new:
@@ -92,8 +95,11 @@ vi:
       korea: Hàn Quốc
       japan: Nhật Bản
       icon-soundcloud: Icon soundcloud
-      playlist: Danh sách phát
       search: Tìm kiếm bài hát...
+      account: Tài khoản
+      profile: Thông tin
+      setting: Cài đặt
+      logout: Đăng xuất
     static_pages:
       hot_topic: Chủ đề hot
       hot_music: Nhạc hot
