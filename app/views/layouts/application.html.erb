@@ -4,7 +4,7 @@
     <title><%= t ".music_app" %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
+
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
   </head>
@@ -12,8 +12,14 @@
   <body>
     <%= render  "layouts/header" %>
     <main class="container">
-      <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% if notice %>
+        <p class="alert alert-success flash"><%= notice %></p>
+      <% elsif alert %>
+        <p class="alert alert-danger flash"><%= alert %></p>
+      <% else %>
+        <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
       <% end %>
       <%= yield %>
     </main>

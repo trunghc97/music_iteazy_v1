@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  devise :database_authenticatable, :registerable,
+    :rememberable, :validatable
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   enum role: {admin: 1, member: 0}
 
@@ -16,7 +18,6 @@ class User < ApplicationRecord
     length: {minimum: Settings.user.password.length},
     allow_nil: true
 
-  has_secure_password
   before_save :downcase_email
 
   private
