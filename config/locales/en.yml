@@ -56,6 +56,11 @@ en:
     edit_form:
       save_change: "Save change"
   users:
+    registrations:
+      new:
+        signup: SignUp
+        create_account: Create Account
+        password_confirmation: Password Confirmation
     create:
       success: Success
     new:

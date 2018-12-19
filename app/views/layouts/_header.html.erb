@@ -31,7 +31,7 @@
             <%= t ".account" %>
             <% end %>
             <ul class="dropdown-menu bg-dark">
-              <li><%= link_to t(".profile"), users_path(current_user), class: "mx-auto w-50 mx-auto text-white" %></li>
+              <li><%= link_to t(".profile"), current_user, class: "mx-auto w-50 mx-auto text-white" %></li>
               <li><%= link_to t(".setting"), "#", class: "mx-auto w-50 mx-auto text-white" %></li>
               <li class="divider"></li>
               <li>

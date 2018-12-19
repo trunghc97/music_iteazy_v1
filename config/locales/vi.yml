@@ -56,6 +56,11 @@ vi:
     edit_form:
       save_change: Lưu thay đổi
   users:
+    registrations:
+      new:
+        signup: Đăng ký
+        create_account: Tạo tài khoản
+        password_confirmation: Xác nhận mật khẩu
     create:
       success: Thành công
     new:
