@@ -1,20 +1,8 @@
-class SessionsController < ApplicationController
+class SessionsController < Devise::SessionsController
+
   def new; end
 
-  def create
-    user = User.find_by email: params[:session][:email].downcase
+  def create; end
 
-    if user&.authenticate params[:session][:password]
-      log_in user
-      redirect_to user
-    else
-      flash[:danger] = t ".invalid"
-      render :new
-    end
-  end
-
-  def destroy
-    log_out
-    redirect_to root_path
-  end
+  def destroy; end
 end
