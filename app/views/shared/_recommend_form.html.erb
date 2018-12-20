@@ -1,0 +1,14 @@
+<ul class="list-items">
+  <% @list_songs.each do |list| %>
+    <li class="items d-flex align-items-center">
+      <% if list.img_url %>
+        <%= link_to image_tag(list.img_url, class: "avatar"), song_path(list.id) %>
+      <% else %>
+        <%= link_to image_tag("play", class: "avatar"), song_path(list.id) %>
+      <% end %>
+      <div class="present">
+        <%= link_to list.title, song_path(list.id), class: "name" %>
+      </div>
+    </li>
+  <% end %>
+</ul>

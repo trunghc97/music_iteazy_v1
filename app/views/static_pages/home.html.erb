@@ -30,20 +30,7 @@
   <aside class="col-md-3 hot-music">
     <div class="just-for-u">
       <h5 class="title"><%= t ".for_you" %></h5>
-      <ul class="list-items">
-        <% @list_songs.each.with_index(0) do |list, index| %>
-        <li class="items d-flex align-items-center">
-          <% if index % 2 == 0 %>
-            <%= link_to image_tag("noel", class: "avatar"), "#" %>
-          <% else %>
-            <%= link_to image_tag("vnvd", class: "avatar"), "#" %>
-          <% end %>
-          <div class="present">
-            <%= link_to list.title, song_path(list.id), class: "name" %>
-          </div>
-        </li>
-        <% end %>
-      </ul>
+      <%= render "shared/recommend_form" %>
     </div>
   </aside>
 </div>

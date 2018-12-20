@@ -1,7 +1,21 @@
-<div class="content">
-  <h3><%= t ".all_songs" %></h3>
-  <ul>
-    <%= render @songs %>
-  </ul>
-  <%= paginate @songs, theme: "twitter-bootstrap-4" %>
+<div class="content index">
+  <h3 class="text-center mt-5 text-white"><%= t ".all_songs" %></h3>
+  <div class="row">
+    <div class="col-md-8">
+      <% if @songs.present? %>
+        <ul>
+          <%= render @songs %>
+        </ul>
+        <%= paginate @songs, theme: "twitter-bootstrap-4" %>
+      <% else %>
+        <h3 class="text-white font-italic"><%= t".cant_find" %></h3>
+      <% end %>
+    </div>
+    <aside class="col-md-3 hot-music">
+      <div class="just-for-u index-recommend">
+        <h5 class="title"><%= t ".for_you" %></h5>
+        <%= render "shared/recommend_form" %>
+      </div>
+    </aside>
+  </div>
 </div>
