@@ -61,6 +61,9 @@ en:
         signup: SignUp
         create_account: Create Account
         password_confirmation: Password Confirmation
+    sessions:
+      new:
+        login: Login
     create:
       success: Success
     new:
@@ -92,6 +95,10 @@ en:
       icon-soundcloud: Icon soundcloud
       playlist: Playlist
       search: Search...
+      account: Account
+      profile: Profile
+      setting: Setting
+      logout: Logout
     static_pages:
       hot_topic: Hot topic
       hot_music: Hot music

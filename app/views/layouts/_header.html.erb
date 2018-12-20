@@ -25,6 +25,9 @@
         <% else %>
         <% end %>
         <% if user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to t(".playlist"), playlists_path, class: "nav-link ds-list text-center home-link text-white h-100 pt-2 pl-4" %>
+          </li>
           <li class="dropdown">
             <%= link_to "#", class: "dropdown-toggle account nav-link home-link text-white h-100 pt-2 pl-4",
               data: {toggle: "dropdown"} do %>
@@ -38,9 +41,6 @@
                 <%= link_to t(".logout"), destroy_user_session_path, method: :delete, class: "mx-auto w-50 mx-auto text-white mt-2"%>
               </li>
             </ul>
-          </li>
-          <li class="nav-item active">
-            <%= link_to t(".playlist"), playlists_path, class: "nav-link home-link ds-list text-white h-100 pt-2 pl-4" %>
           </li>
         <% else %>
           <li class="nav-item active text-center">
