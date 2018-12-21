@@ -90,9 +90,7 @@
 
       <div class="mt-5 mb-5">
         <p class="text-success"><%= t ".lyrics" %></p>
-        <p class="text-white">
-          <%= @song.lyrics %>
-        </p>
+        <%= simple_format @song.lyrics, class: "text-white" %>
       </div>
     </div>
   </div>
@@ -109,7 +107,7 @@
     <% end %>
     <%= render "comments/count_comment", song: @song %>
     <ul class="comments">
-      <div class="notice"></div>
+      <div class="notice text-success"></div>
       <div class="div-create">
         <%= render @supports.comments %>
       </div>
