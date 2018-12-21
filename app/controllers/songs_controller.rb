@@ -28,7 +28,7 @@ class SongsController < ApplicationController
 
   def show
     @comment = current_user.comments.build if user_signed_in?
-    @playlist = current_user.playlists.order_desc if current_user
+    @playlists = current_user.playlists.order_desc if current_user
                                                      &.playlists&.any?
   end
 

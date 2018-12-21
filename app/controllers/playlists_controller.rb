@@ -1,7 +1,9 @@
 class PlaylistsController < ApplicationController
-  before_action :logged_in_user, only: %i(create destroy)
+  before_action :authenticate_user!, only: %i(create destroy)
   before_action :correct_user, only: :destroy
   before_action :find_playlist, only: %i(edit show update)
+  before_action :find_song_and_playlists_on_create,
+    :find_playlist_on_create, only: :create
 
   def index
     @playlist = current_user.playlists.build if user_signed_in?
@@ -9,14 +11,16 @@ class PlaylistsController < ApplicationController
   end
 
   def create
-    @playlist = current_user.playlists.build playlist_params
-
     if @playlist.save
-      flash[:success] = t ".playlist_created"
-      redirect_to playlists_path
+      respond_to do |format|
+        format.html{redirect_to @song}
+        format.js{flash.now[:notice] = t ".success"}
+      end
     else
-      @playlist_items = []
-      render "playlists/index"
+      respond_to do |format|
+        format.html{redirect_to @song}
+        format.js{flash.now[:notice] = t ".failed"}
+      end
     end
   end
 
@@ -56,5 +60,19 @@ class PlaylistsController < ApplicationController
 
   def find_playlist
     @playlist = Playlist.find_by id: params[:id]
+  end
+
+  def find_song_and_playlists_on_create
+    @song = Song.find_by id: params[:song_id] if params[:song_id]
+    @playlists = current_user.playlists
+  end
+
+  def find_playlist_on_create
+    @playlist = if params["playlist"].present?
+                  Playlist.new user_id: params[:user_id],
+                    name: (params["playlist"]["name"])
+                else
+                  Playlist.new user_id: params[:user_id], name: params[:name]
+                end
   end
 end
