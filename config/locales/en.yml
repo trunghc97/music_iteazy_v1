@@ -189,6 +189,8 @@ en:
       destroy: Song has been removed
       cant_destroy: Can't remove this song!
 
+  out_of_size: "should be less than 5MB"
+
   time:
     formats:
       default: "%d/%m/%Y"

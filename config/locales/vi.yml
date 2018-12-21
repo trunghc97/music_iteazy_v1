@@ -192,6 +192,7 @@ vi:
     formats:
       default: "%d/%m/%Y"
 
+  out_of_size: "Không được vượt quá 5MB"
 
   datetime:
     distance_in_words:
