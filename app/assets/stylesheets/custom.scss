@@ -339,3 +339,31 @@ footer {
 .account {
   width: 122px;
 }
+
+.all-song {
+  border-style: inset;
+  border-color: white;
+  padding: 10px;
+  background-color: $black-light;
+  border-radius: 10px;
+}
+
+.index-recommend {
+  .list-items {
+    height: 650px;
+  }
+}
+
+.show-recommend {
+  .list-items {
+    height: 350px;
+  }
+}
+
+.index {
+  min-height: 1000px
+}
+
+.count-song {
+  color: white;
+}

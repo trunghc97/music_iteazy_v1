@@ -1,8 +1,14 @@
-<li>
-  <div class="col-md-2">
-    <%= image_tag "play.png", width: 120 %>
+<li class="all-song">
+  <div class="col-md-3">
+    <%= link_to song do %>
+      <% if song.img_url %>
+        <%= image_tag song.img_url, width: 150 %>
+      <% else %>
+        <%= image_tag "play.png", width: 150 %>
+      <% end %>
+    <% end %>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-9">
     <p class="song-title text-white">
       <%= link_to song.title, song %>
       &nbsp - &nbsp
@@ -39,4 +45,3 @@
     <% end %>
   </div>
 </li>
-<hr>

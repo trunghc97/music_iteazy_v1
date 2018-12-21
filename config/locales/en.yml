@@ -109,13 +109,16 @@ en:
     view: "View: "
     genres: "Genres: "
     index:
-      all_songs: "HOT"
+      all_songs: "Songs"
+      for_you: "Recommend for you"
+      cant_find: "Can't find any song"
     show:
       lyrics: "Lyrics: "
       comments_count: " Comments"
       select_pl: Choose your playlist
       add_playlist: ADD TO PLAYLIST
       genres: Genres
+      for_you: "Recommend for you"
     song:
       confirm: Are You Sure?
       remove_playlist: Remove From Playlist

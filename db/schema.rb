@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_19_070537) do
+ActiveRecord::Schema.define(version: 2018_12_20_134312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,7 +84,10 @@ ActiveRecord::Schema.define(version: 2018_12_19_070537) do
     t.integer "view", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "img_url"
+    t.bigint "user_id", default: 1
     t.index ["singer_id"], name: "index_songs_on_singer_id"
+    t.index ["user_id"], name: "index_songs_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
