@@ -34,11 +34,14 @@ en:
       playlist_updated: "Playlist Updated"
       update_faild: "Update fail"
     create:
-      playlist_created: "Playlist created"
+      success: "Playlist created"
+      failed: "Failed"
     playlist:
       you_sure: "Are you sure?"
     index:
       playlist: Playlist
+    show:
+      no_song: "No song in playlist, please add!"
   sessions:
     create:
       invalid: Invalid email or password
@@ -133,6 +136,9 @@ en:
     add_playlist:
       select_playlist: Select playlist
       select: Select
+      not_found: "Create playlist?"
+      add_playlist: "Create new playlist"
+      submit: "Submit"
     like:
       btn_like: Like
     dislike:

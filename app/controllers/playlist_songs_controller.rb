@@ -1,15 +1,19 @@
 class PlaylistSongsController < ApplicationController
+  before_action :find_song_and_playlists_on_create,
+    :find_playlist_on_create, only: :create
+
   def create
-    @playlist = Playlist.find_by name: params[:playlist_id],
-      user_id: params[:user_id]
-    @song = Song.find_by id: params[:song_id]
     @playlist_song = PlaylistSong.new playlist_id: @playlist.id,
       song_id: @song.id
 
     if @playlist_song.save
-      render json: {status: t(".success")}
+      respond_to do |format|
+        format.js{flash.now[:notice] = t ".success"}
+      end
     else
-      render json: {status: t(".failed")}
+      respond_to do |format|
+        format.js{flash.now[:notice] = t ".failed"}
+      end
     end
   end
 
@@ -23,5 +27,22 @@ class PlaylistSongsController < ApplicationController
       flash[:danger] = t ".cant_destroy"
     end
     redirect_to request.referrer || root_url
+  end
+
+  private
+
+  def find_song_and_playlists_on_create
+    @playlists = current_user.playlists
+    @song = Song.find_by id: params[:song_id]
+  end
+
+  def find_playlist_on_create
+    @playlist = if params["playlist_song"].present?
+                  Playlist.find_by name: params["playlist_song"]["playlist_id"],
+                   user_id: params[:user_id]
+                else
+                  Playlist.find_by name: params[:playlist_id],
+                    user_id: params[:user_id]
+                end
   end
 end

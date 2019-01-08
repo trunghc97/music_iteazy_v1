@@ -13,6 +13,10 @@
   <%= f.label :song, class: "text-white" %>
   <%= f.file_field :song_url, class: "text-white", accept: "audio/mp3" %>
 
+  <%= f.label :song_url, class: "text-white" %>
+  <%= f.file_field :song_url, class: "text-white" %>
+
+
   <%= f.label :singer, class: "text-white" %>
   <%= f.collection_select :singer_id, Singer.order(:name), :id, :name ,class: "form-control", include_blank: true %>
 
