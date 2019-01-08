@@ -2,11 +2,19 @@
 
 body {
   background: $midnightblue;
+  a {
+    color: $silver;
+    &:hover {
+      text-decoration: none;
+      color: orange;
+    }
+  }
 }
 /*---------------Nav-Top---------------*/
 .nav-top {
   padding: unset;
   background: $darkslategray;
+  height: 50px;
 }
 
 .div-collapse {
@@ -65,9 +73,6 @@ dropdown-account {
 .nav-2 li {
   margin-right: 20px;
   color: $lightslategray;
-}
-.dropdown:hover>.dropdown-menu {
-  display: block;
 }
 
 .hot-music {
@@ -135,6 +140,7 @@ ol li h5 {
 .search {
   border-radius: 10px;
   margin-top: 5px;
+  padding-left: 15px;
 }
 /*--------------End-Search-----------------*/
 /*--------------Song-------------------*/
@@ -379,4 +385,25 @@ footer {
 .social-share-button {
   right: 1px;
   top: 0px;
+}
+
+
+.notification {
+  width: 300px
+}
+
+.list-genres {
+  img {
+    width: 180px;
+  }
+}
+
+.dropdown-menu {
+  border: solid gray;
+  border-radius: 10px;
+  left: -15px;
+  a {
+    padding-left: 5px;
+    padding-bottom: 0px
+  }
 }
