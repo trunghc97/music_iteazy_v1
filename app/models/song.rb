@@ -27,6 +27,15 @@ class Song < ApplicationRecord
 
   scope :include_to_song, ->{includes :singer, :comments, :genres}
   scope :hot_feed, ->{order view: :desc}
+  scope :search_index, lambda{|search|
+    if search
+      search_by_full_name(search).hot_feed
+    else
+      hot_feed
+    end
+  }
+
+  delegate :name, to: :singer, allow_nil: true
 
   pg_search_scope :search_by_full_name, against: :title
 

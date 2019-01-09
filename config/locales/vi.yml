@@ -58,6 +58,8 @@ vi:
       playlist: Danh sách phát
     edit_form:
       save_change: Lưu thay đổi
+    list_playlist:
+      not_found: "Không tìm thấy playlist nào!"
   users:
     registrations:
       new:
@@ -72,7 +74,7 @@ vi:
     new:
       create-account: Tạo tài khoản mới
     show:
-      not_found: "Không tìm thấy người dùng"
+      not_found: "Không có bài hát nào"
 
   layouts:
     application:
@@ -104,6 +106,8 @@ vi:
       setting: Cài đặt
       logout: Đăng xuất
       no_noti: Không có thông báo
+    footer:
+      footer: "@CopyRight TrungHC 2019"
     static_pages:
       hot_topic: Chủ đề hot
       hot_music: Nhạc hot

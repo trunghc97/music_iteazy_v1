@@ -396,6 +396,10 @@ footer {
   img {
     width: 180px;
   }
+  .item {
+    width:190px;
+    height: 245px;
+  }
 }
 
 .dropdown-menu {
@@ -406,4 +410,18 @@ footer {
     padding-left: 5px;
     padding-bottom: 0px
   }
+}
+
+.song-img {
+  img{
+    width: 150px;
+  }
+}
+
+.space {
+  padding-left: 5px;
+}
+
+.min-height {
+  min-height: 500px;
 }

@@ -3,4 +3,8 @@
     <%= render @playlist_items %>
   </ol>
   <%= paginate @playlist_items, theme: "twitter-bootstrap-4" %>
+<% else %>
+  <h5 class="font-italic text-white">
+    <%= t ".not_found" %>
+  </h5>
 <% end %>
