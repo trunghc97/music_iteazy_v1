@@ -40,9 +40,9 @@
         <% end %>
       </div>
     <% end %>
-    <% if current_user&.admin? %>
-      <%= link_to t(".edit"), edit_admin_song_path(song), class: "btn btn-info" %>
-      <%= link_to t(".delete"), admin_song_path(song), class: "btn btn-danger",
+    <% if song.user == current_user  %>
+      <%= link_to t(".edit"), edit_song_path(song), class: "btn btn-info" %>
+      <%= link_to t(".delete"), song_path(song), class: "btn btn-danger",
         method: :delete, data: {confirm: t(".confirm")} %>
     <% end %>
   </div>

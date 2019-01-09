@@ -1,7 +1,11 @@
 <div class="content">
   <div class="row mt-5">
     <div class="col-3">
-      <%= image_tag "play_music_circle.png", class: "w-100 rotate-img"%>
+      <% if @song.img_url.present? %>
+        <%= image_tag @song.img_url.url, class: "rounded w-100"%>
+      <% else %>
+        <%= image_tag "play_music_circle.png", class: "w-100 rotate-img"%>
+      <% end %>
     </div>
 
     <div class="col-6">

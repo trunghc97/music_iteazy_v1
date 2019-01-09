@@ -5,30 +5,22 @@ class CommentsController < ApplicationController
     @song = Song.find_by id: params[:song_id]
     @comment = @song.comments.build comment_params
 
-    if @comment.save
-      respond_to do |format|
-        format.html{redirect_to @song}
+    respond_to do |format|
+      format.html{redirect_to @song}
+      if @comment.save
         format.js{flash.now[:notice] = t ".created"}
-      end
-    else
-      respond_to do |format|
-        format.html{redirect_to @song}
+      else
         format.js{flash.now[:notice] = t ".failed"}
       end
     end
   end
 
   def destroy
-    @song = Song.find_by id: @comment.song.id
-
-    if @comment.destroy
-      respond_to do |format|
-        format.html{redirect_to @song}
+    respond_to do |format|
+      format.html{redirect_to request.referrer || root_url}
+      if @comment.destroy
         format.js{flash.now[:notice] = t ".destroy"}
-      end
-    else
-      respond_to do |format|
-        format.html{redirect_to request.referrer || root_url}
+      else
         format.js{flash.now[:notice] = t ".cant_destroy"}
       end
     end
@@ -41,7 +33,9 @@ class CommentsController < ApplicationController
   end
 
   def correct_user
-    @comment = current_user.comments.find_by id: params[:id]
-    redirect_to songs_url unless @comment
+    @comment = Comment.find_by id: params[:id]
+    @song = @comment.song
+    return if current_user == @comment.user || current_user == @song.user
+    redirect_to root_url
   end
 end

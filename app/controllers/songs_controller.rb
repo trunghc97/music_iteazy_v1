@@ -1,5 +1,6 @@
 class SongsController < ApplicationController
-  before_action :find_song, only: :show
+  before_action :correct_user, only: %i(update destroy)
+  before_action :find_song, only: %i(show edit update destroy)
   before_action :support, only: :show
   before_action :authenticate_user!, only: %i(new create)
   after_action :increase_view, only: :show
@@ -37,6 +38,32 @@ class SongsController < ApplicationController
                                                      &.playlists&.any?
   end
 
+  def edit
+    return unless @song.singer
+    @song.singer.name = nil
+    @song.singer.description = nil
+  end
+
+  def update
+    if @song.update song_params
+      flash[:success] = t ".success"
+      redirect_to @song
+    else
+      flash[:danger] = t ".failed"
+      render :edit
+    end
+  end
+
+  def destroy
+    if @song.comments.destroy_all && @song.playlist_songs.destroy_all &&
+      @song.genre_songs.destroy_all && @song.delete
+      flash[:success] = t ".success"
+    else
+      flash[:danger] = t "failed"
+    end
+    redirect_to request.referrer || root_url
+  end
+
   private
 
   def song_params
@@ -59,5 +86,13 @@ class SongsController < ApplicationController
   def increase_view
     @song.increment! :view
     @song.save
+  end
+
+  def correct_user
+    @song = Song.find_by id: params[:id]
+    
+    return if current_user == @song.user
+    flash[:danger] = t ".no_permit"
+    redirect_to song_url
   end
 end
