@@ -10,6 +10,8 @@ class Song < ApplicationRecord
   has_many :view_logs
   has_many :genre_songs, dependent: :destroy
   has_many :genres, through: :genre_songs
+  has_many :playlist_songs
+  has_many :playlists, through: :playlist_songs
 
   include PgSearch
 
@@ -31,14 +33,12 @@ class Song < ApplicationRecord
   private
 
   def img_size
-    if img_url.size > Settings.file_size.megabytes
-      errors.add :img_url, I18n.t(".out_of_size")
-    end
+    return if img_url.size <= Settings.file_size.megabytes
+    errors.add :img_url, I18n.t(".out_of_size")
   end
 
   def song_size
-    if song_url.size > Settings.file_size.megabytes
-      errors.add :song_url, I18n.t(".out_of_size")
-    end
+    return if song_url.size <= Settings.file_size.megabytes
+    errors.add :song_url, I18n.t(".out_of_size")
   end
 end
