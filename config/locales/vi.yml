@@ -200,6 +200,26 @@ vi:
       commented: "Ai đó đã bình luận bài hát của bạn"
       liked: "Ai đó đã thích bài hát của bạn"
 
+  activerecord:
+    errors:
+      models:
+        song:
+          attributes:
+            title:
+              blank: "không được để trống"
+              too_long: "Tên bài hát quá dài"
+            song_url:
+              blank: "không được để trống"
+        singer:
+          attributes:
+            name:
+              too_long: "Tên ca sĩ quá dài"
+              taken: "Tên ca sĩ đã tồn tại"
+
+  errors:
+    messages:
+      extension_whitelist_error: "Không đúng định dạng"
+
   time:
     formats:
       default: "%d/%m/%Y"
