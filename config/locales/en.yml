@@ -122,6 +122,17 @@ en:
     create:
       success: "Upload success"
       failed: "Upload failed"
+    edit:
+      edit: "Edit Song"
+      save: "Save"
+    update:
+      success: "Update success"
+      failed: "Update failed"
+    destroy:
+      success: "Song has been deleted"
+      failed: "Can't delete this song"
+    correct_user:
+      no_permit: "No permission"
     show:
       lyrics: "Lyrics: "
       comments_count: " Comments"

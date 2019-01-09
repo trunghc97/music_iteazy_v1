@@ -130,6 +130,17 @@ vi:
       select_pl: Lựa chọn danh sách phát
       add_playlist: Thêm vào danh sách phát
       for_you: "Bài hát cùng ca sĩ"
+    edit:
+      edit: "Chỉnh sửa bài hát"
+      save: "Lưu"
+    update:
+      success: "Update thành công"
+      failed: "Update thất bại"
+    destroy:
+      success: "Bài hát đã được xoá"
+      failed: "Không thể xoá bài hát"
+    correct_user:
+      no_permit: "Không có quyền"
     song:
         confirm: Bạn có chắc chắn không?
         remove_playlist: Xóa khỏi danh sách
