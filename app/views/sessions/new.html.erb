@@ -1,13 +1,13 @@
-<h1 class="text-white"><%= t ".login" %></h1>
+new class="text-white"><%= t ".login" %></h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3 mx-auto">
     <%= form_for :session, url: login_path do |f| %>
 
-      <%= f.label :email, class: "text-white" %>
+      <%= f.label :email, class: "text-white require" %>
       <%= f.email_field :email, class: "form-control" %>
 
-      <%= f.label :password, class: "text-white" %>
+      <%= f.label :password, class: "text-white require" %>
       <%= f.password_field :password, class: "form-control" %>
 
       <%= f.submit t ".login", class: "btn btn-success" %>

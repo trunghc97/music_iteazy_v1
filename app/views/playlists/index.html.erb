@@ -4,7 +4,29 @@
       <h3 class="mx-auto text-center text-white font-weight-bold w-50 py-4 pt-5">
         <%= t ".playlist" %>
       </h3>
+      <%= link_to t(".add_playlist"), "#", class:
+          "btn btn-success text-capitalize mb-5 ml-5", data: {toggle: "modal",
+          target: "#add_playlist"} %>
       <%= render "shared/list_playlist" %>
     </div>
   </div>
 <% end %>
+
+<div class="modal fade" id="add_playlist" tabindex="-1" role="dialog"
+  aria-labelledby="login_or_apply" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content modal-add-playlist">
+      <div class="modal-header bg-theme1">
+        <button type="button" class="close" data-dismiss="modal"
+          aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <% if user_signed_in? %>
+          <%= render "playlists/add_playlist" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

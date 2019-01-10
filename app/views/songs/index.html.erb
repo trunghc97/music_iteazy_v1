@@ -1,5 +1,10 @@
 <div class="content index">
   <h3 class="text-center mt-5 text-white"><%= t ".all_songs" %></h3>
+  <% if @count_song != 0 %>
+    <h5 class="text-white">
+      <%= @count_song %> Songs available
+    </h5>
+  <% end %>
   <div class="row">
     <div class="col-md-8">
       <% if @songs.present? %>

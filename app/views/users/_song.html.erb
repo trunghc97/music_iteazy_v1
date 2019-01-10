@@ -36,18 +36,10 @@
         <%= song.view %>
       </p>
 
-      <% if @playlist&.songs %>
-        <div class="row mb-5">
-          <audio controls loop>
-            <source src="<%= song.song_url.url %>" type="audio/mp3">
-          </audio>
-        </div>
-        <div class="col-12 pl-0">
-          <%= form_with url: playlist_song_path, method: :delete do %>
-            <%= hidden_field_tag :song_id, song.id %>
-            <%= submit_tag t(".remove_playlist"), class: "btn btn-danger text-capitalize" %>
-          <% end %>
-        </div>
+      <% if song.user == current_user  %>
+        <%= link_to t(".edit"), edit_song_path(song), class: "btn btn-info" %>
+        <%= link_to t(".delete"), song_path(song), class: "btn btn-danger",
+          method: :delete, data: {confirm: t(".confirm")} %>
       <% end %>
     </div>
   </div>

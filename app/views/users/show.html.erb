@@ -15,9 +15,11 @@
 </div>
 <div class= "justify-content min-height">
   <% if @songs.present? %>
-    <ul>
-      <%= render @songs %>
-    </ul>
+    <% @songs.order_new.each do |song| %>
+      <ul>
+        <%= render "users/song", song: song %>
+      </ul>
+    <% end %>
     <%= paginate @songs, theme: "twitter-bootstrap-4" %>
   <% else %>
     <h5 class="text-white font-italic">

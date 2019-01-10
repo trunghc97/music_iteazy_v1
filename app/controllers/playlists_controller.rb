@@ -11,16 +11,25 @@ class PlaylistsController < ApplicationController
   end
 
   def create
-    if @playlist.save
-      respond_to do |format|
-        format.html{redirect_to @song}
-        format.js{flash.now[:notice] = t ".success"}
+    if params[:song_id]
+      if @playlist.save
+        respond_to do |format|
+          format.html{redirect_to @song}
+          format.js{flash.now[:notice] = t ".success"}
+        end
+      else
+        respond_to do |format|
+          format.html{redirect_to @song}
+          format.js{flash.now[:notice] = t ".failed"}
+        end
       end
     else
-      respond_to do |format|
-        format.html{redirect_to @song}
-        format.js{flash.now[:notice] = t ".failed"}
+      if @playlist.save
+        flash[:success] = t ".success"
+      else
+        flash[:success] = t ".failed"
       end
+      redirect_to playlists_path
     end
   end
 
@@ -64,7 +73,8 @@ class PlaylistsController < ApplicationController
 
   def find_song_and_playlists_on_create
     @song = Song.find_by id: params[:song_id] if params[:song_id]
-    @playlists = current_user.playlists
+    return unless current_user.playlists
+    @playlists = current_user.playlists.order_desc
   end
 
   def find_playlist_on_create

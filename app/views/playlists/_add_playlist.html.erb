@@ -1,0 +1,9 @@
+<div class="add-playlist">
+  <%= form_with model: @playlist, url: playlists_path, method: :post do |f| %>
+    <%= hidden_field_tag :user_id, current_user.id %>
+    <%= f.label :playlist_name %>
+    <%= f.text_field :name, class: "form-control" %>
+
+    <%= f.submit t(".submit"), class: "btn btn-success form-control" %>
+  <% end %>
+</div>

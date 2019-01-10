@@ -27,6 +27,7 @@ class Song < ApplicationRecord
 
   scope :include_to_song, ->{includes :singer, :comments, :genres}
   scope :hot_feed, ->{order view: :desc}
+  scope :order_new , ->{order created_at: :desc}
   scope :search_index, lambda{|search|
     if search
       search_by_full_name(search).hot_feed
@@ -47,7 +48,7 @@ class Song < ApplicationRecord
   end
 
   def song_size
-    return if song_url.size <= Settings.file_size.megabytes
-    errors.add :song_url, I18n.t(".out_of_size")
+    return if song_url.size <= 10.megabytes
+    errors.add :song_url, I18n.t(".out_of_size_song")
   end
 end
