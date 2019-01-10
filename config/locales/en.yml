@@ -58,6 +58,8 @@ en:
       playlist: Playlist
     edit_form:
       save_change: "Save change"
+    list_playlist:
+      not_found: "No playlist"
   users:
     registrations:
       new:
@@ -72,7 +74,7 @@ en:
     new:
       create-account: Create new account
     show:
-      not_found: "Can't find user"
+      not_found: "No Song! please add"
 
   layouts:
     application:
@@ -103,6 +105,8 @@ en:
       setting: Setting
       logout: Logout
       no_noti: No notification
+    footer:
+      footer: "@CopyRight TrungHC 2019"
     static_pages:
       hot_topic: Hot topic
       hot_music: Hot music
@@ -204,13 +208,13 @@ en:
       success: Added to playlist
       failed: Failed
     destroy:
-      destroy: Song has been removed
+      destroy: Song has been removed from playlist
       cant_destroy: Can't remove this song!
 
   notifications:
     notification:
-      commented: "Someone commented in your song"
-      liked: "Someone liked your song"
+      commented: "Your song has been commented"
+      liked: "Your song has been liked"
   out_of_size: "should be less than 5MB"
 
   time:

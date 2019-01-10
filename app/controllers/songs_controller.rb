@@ -6,12 +6,8 @@ class SongsController < ApplicationController
   after_action :increase_view, only: :show
 
   def index
-    if params[:search]
-      @songs = Song.search_by_full_name(params[:search])
-                   .page(params[:page]).per Settings.pages.per_page
-    else
-      @songs = Song.page(params[:page]).per Settings.pages.per_page
-    end
+    @songs = Song.search_index(params[:search])
+      .page(params[:page]).per Settings.pages.per_page
     @list_songs = Song.first Settings.list_song
   end
 
@@ -90,7 +86,7 @@ class SongsController < ApplicationController
 
   def correct_user
     @song = Song.find_by id: params[:id]
-    
+
     return if current_user == @song.user
     flash[:danger] = t ".no_permit"
     redirect_to song_url
