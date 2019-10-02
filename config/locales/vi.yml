@@ -13,7 +13,7 @@ vi:
     application:
       english: Tiếng Anh
       vietnamese: Tiếng Việt
-      music_app: Ứng dụng nghe nhạc
+      music_app: Music Iteazy
     header:
       login: Đăng nhập
       account: Tài khoản
@@ -78,7 +78,7 @@ vi:
 
   layouts:
     application:
-      music_app: App nghe nhạc
+      music_app: Music Iteazy
     header:
       playlist: Danh sách phát
       login: Đăng nhập
@@ -212,8 +212,8 @@ vi:
 
   notifications:
     notification:
-      commented: "Ai đó đã bình luận bài hát của bạn"
-      liked: "Ai đó đã thích bài hát của bạn"
+      commented: "%{sender} đã bình luận bài hát của bạn"
+      liked: "%{sender} đã thích bài hát của bạn"
 
   activerecord:
     errors:

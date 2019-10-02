@@ -1,3 +1,8 @@
+User.create! name: "ADMIN",
+             password: "123456",
+             email: "huynhchitrung97@gmail.com",
+             role: 1
+
 Singer.create! name: "Rhymastic",
                description: Faker::Lorem.sentence(5)
 
@@ -16,10 +21,6 @@ Singer.create! name: "The Men",
 Singer.create! name: "Andiez",
               description: Faker::Lorem.sentence(5)
 
-User.create! name: "ADMIN",
-             password: "123456",
-             email: "huynhchitrung97@gmail.com",
-             role: 1
 
 3.times do |n|
   name = Faker::Name.name
@@ -35,73 +36,85 @@ Song.create! singer_id: 1,
               title: "Yeu 4",
               lyrics: Faker::Lorem.sentence(200),
               song_url: "https://res.cloudinary.com/trunghc/video/upload/v1542677337/Yeu_4_-_Rhymastic.mp3",
-              view: 8758
+              view: 8758,
+              user_id: 1
 
 Song.create! singer_id: 2,
             title: "Lang",
             lyrics: Faker::Lorem.sentence(200),
             song_url: "https://res.cloudinary.com/trunghc/video/upload/v1543721999/Lang-JSOL.mp3",
-            view: rand(1..2000)
+            view: rand(1..2000),
+            user_id: 1
 
 Song.create! singer_id: 3,
             title: "Hoa Sua",
             lyrics: Faker::Lorem.sentence(200),
             song_url: "https://res.cloudinary.com/trunghc/video/upload/v1543721980/Hoa_Sua_-_JustaTee_Mr_A.mp3",
-            view: rand(1..2000)
+            view: rand(1..2000),
+            user_id: 1
 
 Song.create! singer_id: 4,
             title: "24h",
             lyrics: Faker::Lorem.sentence(1000),
             song_url: "https://res.cloudinary.com/trunghc/video/upload/v1544082810/24h-LyLy-Magazine.mp3",
-            view: rand(1..2000)
+            view: rand(1..2000),
+            user_id: 1
 
 Song.create! singer_id: 4,
             title: "Duong 1 chieu",
             lyrics: Faker::Lorem.sentence(200),
             song_url: "https://res.cloudinary.com/trunghc/video/upload/v1544318445/DuongMotChieu-HuynhTu-4615451.mp3",
-            view: rand(1..2000)
+            view: rand(1..2000),
+            user_id: 1
 
 Song.create! singer_id: 5,
             title: "Tan bao giac mo",
             lyrics: Faker::Lorem.sentence(200),
             song_url: "https://res.cloudinary.com/trunghc/video/upload/v1543722031/TanBaoGiacMo-TheMen-2435164.mp3",
-            view: rand(1..2000)
+            view: rand(1..2000),
+            user_id: 1
 
 Song.create! singer_id: 6,
             title: "1 Phut",
             lyrics: Faker::Lorem.sentence(200),
             song_url: "https://res.cloudinary.com/trunghc/video/upload/v1543720987/1-Phut-Andiez.mp3",
-            view: rand(1..2000)
+            view: rand(1..2000),
+            user_id: 1
 
 Song.create! singer_id: 1,
             title: "Nguoi va ta",
             lyrics: Faker::Lorem.sentence(200),
             song_url: "https://res.cloudinary.com/trunghc/video/upload/v1544318584/Nguoi-Va-Ta-Rhymastic-Thanh-Huyen.mp3",
-            view: rand(1..2000)
+            view: rand(1..2000),
+            user_id: 1
 
 Song.create! singer_id: 3,
             title: "Imma Heartbreaker",
             lyrics: Faker::Lorem.sentence(200),
             song_url: "https://res.cloudinary.com/trunghc/video/upload/v1543721993/Imma_Heartbreaker_-_JustaTee_Emily_LK.mp3",
-            view: rand(1..2000)
+            view: rand(1..2000),
+            user_id: 1
 
 Song.create! singer_id: 3,
             title: "Mat troi cua em",
             lyrics: Faker::Lorem.sentence(200),
             song_url: "https://res.cloudinary.com/trunghc/video/upload/v1543721988/Mat-Troi-Cua-Em-Phuong-Ly-JustaTee.mp3",
-            view: rand(1..2000)
+            view: rand(1..2000),
+            user_id: 1
 
 Song.create! singer_id: 10,
             title: "Khong the thay the",
             lyrics: Faker::Lorem.sentence(200),
             song_url: "https://res.cloudinary.com/trunghc/video/upload/v1543720995/Khong-The-Thay-The-365DaBand.mp3",
-            view: rand(1..2000)
+            view: rand(1..2000),
+            user_id: 1
 
 Song.create! singer_id: 10,
             title: "Cau vong tinh yeu",
             lyrics: Faker::Lorem.sentence(200),
             song_url: "https://res.cloudinary.com/trunghc/video/upload/v1543721931/Cau_Vong_Tinh_Yeu_-_Ustylez.mp3",
-            view: rand(1..2000)
+            view: rand(1..2000),
+            user_id: 1
 
 
 Genre.create! title: "Pop"

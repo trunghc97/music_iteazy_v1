@@ -1,7 +1,7 @@
 class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :song
-  has_many :notifications, as: :notifiable
+  has_one :notification, as: :notifiable, dependent: :destroy
 
   validates :content, presence: true,
     length: {maximum: Settings.content.max_length}
@@ -18,7 +18,8 @@ class Comment < ApplicationRecord
     @song = Song.find_by id: song_id
 
     return if user_id == @song.user_id
-    Notification.create user_id: user_id, notifiable_id: song_id,
-      notifiable_type: :Comment
+    notification = Notification.create user_id: user_id, notifiable_id: song_id,
+      notifiable_type: :Comment, recipient_id: @song.user_id
+    ActionCable.server.broadcast "notification_channel_#{@song.user_id}", actor: user_id
   end
 end

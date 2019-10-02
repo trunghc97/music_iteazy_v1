@@ -16,9 +16,8 @@
           <%= link_to t(".collection"), songs_url, class: "nav-link home-link collec-link text-white h-100 pt-2 pl-2" %>
         </li>
         <li class="active-pink-3 active-pink-4 mb-4 search-box">
-          <%= form_tag songs_path, method: :get do %>
-            <%= text_field_tag :search, params[:search], class: "search", placeholder: t(".search") %>
-            <%= submit_tag t(".search"), class: "search-button" %>
+          <%= search_form_for(@q, url: songs_path, method: :get) do |f| %>
+            <%= f.search_field :title_or_lyrics_or_singer_name_cont, class: "search" %>
           <% end %>
         </li>
         <% if current_user %>
@@ -32,16 +31,9 @@
             <%= link_to t(".playlist"), playlists_path, class: "nav-link ds-list text-center home-link text-white h-100 pt-2 pl-4" %>
           </li>
           <li class="nav-item active dropdown">
-              <a href="#" data-toggle="dropdown">
-                <i class="fa fa-bell mt-2" aria-hidden="true"></i>
-              </a>
-              <ul class="dropdown-menu bg-dark">
-                <% if show_notifications.present? %>
-                  <%= render @notifications %>
-                <% else %>
-                  <span class="text-white"><%= t ".no_noti" %></span>
-                <% end %>
-              </ul>
+            <div class="notification-center">
+              <%= render "notifications/notification_center", notifications: @notifications, unread: @unread %>
+            </div>
           </li>
           <li class="dropdown">
             <%= link_to "#", class: "dropdown-toggle account nav-link home-link text-white h-100 pt-2 pl-4",

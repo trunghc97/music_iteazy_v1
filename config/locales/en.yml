@@ -13,7 +13,7 @@ en:
     application:
       english: English
       vietnamese: Vietnamese
-      music_app: Music App
+      music_app: Music Iteazy
     header:
       login: Login
       account: Account
@@ -80,7 +80,7 @@ en:
 
   layouts:
     application:
-      music_app: App nghe nhạc
+      music_app: Music Iteazy
     header:
       all_song: Songs
       collection: Collection
@@ -215,8 +215,8 @@ en:
 
   notifications:
     notification:
-      commented: "Your song has been commented"
-      liked: "Your song has been liked"
+      commented: "%{sender} comment your song"
+      liked: "%{sender} like your song"
   out_of_size: "should be less than 5MB"
   out_of_size_song: "should be less than 10MB"
 
