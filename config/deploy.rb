@@ -6,7 +6,7 @@ set :repo_url, "https://github.com/hct97/music_iteazy_v1.git"
 set :ssh_options, { :forward_agent => true }
 
 set :pty, true
-set :linked_files, %w(config/database.yml config/application.yml config/cloudinary.yml)
+set :linked_files, %w(config/database.yml config/application.yml config/cloudinary.yml config/cable.yml)
 set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads)
 set :keep_releases, 5
 set :rvm_type, :user

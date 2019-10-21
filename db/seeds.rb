@@ -1,3 +1,5 @@
+User.all.destroy_all
+
 User.create! name: "ADMIN",
              password: "123456",
              email: "huynhchitrung97@gmail.com",

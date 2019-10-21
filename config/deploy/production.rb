@@ -10,7 +10,7 @@
 set :user, "trunghc"
 set :stage, :production
 set :rails_env, :production
-set :branch, "cancancan"
+set :branch, "master"
 set :deploy_to, "/home/trunghc/deploy/music_iteazy_v1"
 server "3.15.222.84", user: "trunghc", roles: %w{app db web}
 set :ssh_options, { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/authorized_keys) }
