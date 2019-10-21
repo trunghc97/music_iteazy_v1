@@ -116,7 +116,9 @@
         <%= render @supports.comments %>
       </div>
     </ul>
-    <%= paginate @supports.comments, theme: "twitter-bootstrap-4" %>
+    <div class="paginate">
+      <%= paginate @supports.comments, theme: "twitter-bootstrap-4", remote: true %>
+    </div>
   </div>
 </div>
 

@@ -1,0 +1,11 @@
+<a href="#" data-toggle="dropdown" class="click-notifications">
+  <i class="fa fa-bell mt-2" aria-hidden="true"></i>
+  <span id="notification-counter"><%= unread %></span>
+</a>
+<ul class="dropdown-menu bg-dark list-notifications">
+  <% if notifications.present? %>
+    <%= render notifications %>
+  <% else %>
+    <span class="text-white"><%= t ".no_noti" %></span>
+  <% end %>
+</ul>

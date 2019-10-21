@@ -5,6 +5,7 @@ gem "bcrypt"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "bootstrap"
 gem "bootstrap4-kaminari-views"
+gem "cancancan"
 gem "carrierwave"
 gem "cloudinary"
 gem "cocoon"
@@ -18,7 +19,8 @@ gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
 gem "kaminari"
 gem "pg", ">= 0.18", "< 2.0"
-gem "pg_search"
+gem "ransack"
+gem "redis"
 gem "puma", "~> 3.11"
 gem "rails", "~> 5.2.1", ">= 5.2.1.1"
 gem "recaptcha"
@@ -41,6 +43,18 @@ group :development do
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console", ">= 3.3.0"
+end
+
+group :production do
+  gem "capistrano"
+  gem "capistrano3-puma"
+  gem "capistrano-rails", require: false
+  gem 'capistrano-passenger'
+  gem "capistrano-yarn"
+  gem "capistrano-bundler", require: false
+  gem "capistrano-rails"
+  gem "capistrano-rails-db"
+  gem "capistrano-rvm"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]

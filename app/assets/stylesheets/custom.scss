@@ -389,7 +389,9 @@ footer {
 
 
 .notification {
-  width: 300px
+  width: 270px;
+  word-wrap: break-word;
+  margin: 8px 0px;
 }
 
 .list-genres {
@@ -457,4 +459,28 @@ footer {
   .notify-text {
     margin: auto auto;
   }
+}
+
+.list-notifications {
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  left: -20px;
+  background-color: $midnightblue !important;
+}
+
+#notification-counter {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+
+  background-color: rgb(212, 78, 3);
+  color: #fff;
+  border-radius: 3px;
+  padding: 1px 3px;
+  font: 8px Verdana;
+}
+
+.unread {
+  background-color: #424242;
 }

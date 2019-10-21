@@ -1,12 +1,25 @@
-<li class="notification">
-  <% if notification.notifiable_type == "Comment" %>
-    <span class="text-white class mt-0 mb-0">
-      <%= link_to t(".commented"), song_path(notification.notifiable_id) %>
-    </span>
-  <% else %>
+<% if notification.read %>
+  <li class="notification">
     <span>
-      <%= link_to t(".liked"), song_path(notification.notifiable_id) %>
-    </span>
-  <% end %>
-  <hr>
-</li>
+      <% if notification.notifiable_type == "Comment" %>
+        <%= link_to t(".commented", sender: notification.user.name),
+          song_path(notification.notifiable_id) %>
+      <% else %>
+        <%= link_to t(".liked", sender: notification.user.name),
+          song_path(notification.notifiable.likeable.id) %>
+      <% end %>
+    <span>
+  </li>
+  <% else %>
+  <li class="notification unread">
+    <span>
+      <% if notification.notifiable_type == "Comment" %>
+        <%= link_to t(".commented", sender: notification.user.name),
+          notification_path(notification.id), method: :patch %>
+      <% else %>
+        <%= link_to t(".liked", sender: notification.user.name),
+          notification_path(notification.id), method: :patch %>
+      <% end %>
+    <span>
+  </li>
+<% end %>

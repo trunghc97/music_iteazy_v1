@@ -1,8 +1,10 @@
 $('#comment_content').val('');
 $('.count-song').html('<%= j render "comments/count_comment", song: @song %>');
 $('.div-create').html('<%= j render partial: "comments/comment",\
-  collection: @song.comments.ordered %>');
+  collection: @song.comments.ordered.page(1).per(Settings.pages.per_page) %>');
 $(".notice").html("<%= flash.now[:notice] %>");
 setTimeout(function(){
   $('.notice').html('');
 },3000);
+$('.paginate').html('<%= j paginate @song.comments.ordered.page(1).per(Settings.pages.per_page),\
+  theme: "twitter-bootstrap-4", remote: true %>')

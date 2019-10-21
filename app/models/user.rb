@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :playlists, dependent: :destroy
   has_many :comments
   has_many :liked, as: :likeable
+  has_many :notifications, dependent: :destroy, inverse_of: :recipient, foreign_key: :recipient_id
 
   validates :name, presence: true,
     length: {maximum: Settings.user.name.length}
