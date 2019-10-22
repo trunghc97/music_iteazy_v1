@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: redis://redistogo:e805799b960102ec5c25f629b8eb433c@hammerjaw.redistogo.com:9529/
+  url: redis://3.15.222.84:6379/
   channel_prefix: ruby_music_01_production

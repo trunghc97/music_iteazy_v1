@@ -42,10 +42,10 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Mount Action Cable outside main process or domain
-  config.web_socket_server_url = "wss://music-iteazy.herokuapp.com/cable"
+  config.web_socket_server_url = "wss://3.15.222.84:3000/cable"
   # config.action_cable.mount_path = nil
-  # config.action_cable.url = 'wss://example.com/cable'
-  config.action_cable.allowed_request_origins = [ 'http://music-iteazy.herokuapp.com', 'http:music-iteazy.herokuapp.com' ]
+  config.action_cable.url = 'wss://3.15.222.84/cable'
+  config.action_cable.allowed_request_origins = [ 'http://3.15.222.84/', 'http:3.15.222.84' ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
