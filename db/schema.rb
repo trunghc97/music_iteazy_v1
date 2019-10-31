@@ -12,10 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_10_02_065513) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "comments", force: :cascade do |t|
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "song_id"
     t.bigint "user_id"
     t.string "content"
@@ -25,7 +22,7 @@ ActiveRecord::Schema.define(version: 2019_10_02_065513) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "genre_songs", force: :cascade do |t|
+  create_table "genre_songs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "genre_id"
     t.bigint "song_id"
     t.datetime "created_at", null: false
@@ -34,13 +31,13 @@ ActiveRecord::Schema.define(version: 2019_10_02_065513) do
     t.index ["song_id"], name: "index_genre_songs_on_song_id"
   end
 
-  create_table "genres", force: :cascade do |t|
+  create_table "genres", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "likeds", force: :cascade do |t|
+  create_table "likeds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "likeable_id"
     t.string "likeable_type"
     t.datetime "created_at", null: false
@@ -49,7 +46,7 @@ ActiveRecord::Schema.define(version: 2019_10_02_065513) do
     t.index ["user_id"], name: "index_likeds_on_user_id"
   end
 
-  create_table "notifications", force: :cascade do |t|
+  create_table "notifications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.integer "notifiable_id"
     t.string "notifiable_type"
@@ -60,7 +57,7 @@ ActiveRecord::Schema.define(version: 2019_10_02_065513) do
     t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
-  create_table "playlist_songs", force: :cascade do |t|
+  create_table "playlist_songs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "playlist_id"
     t.bigint "song_id"
     t.datetime "created_at", null: false
@@ -69,7 +66,7 @@ ActiveRecord::Schema.define(version: 2019_10_02_065513) do
     t.index ["song_id"], name: "index_playlist_songs_on_song_id"
   end
 
-  create_table "playlists", force: :cascade do |t|
+  create_table "playlists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.string "name"
     t.string "description"
@@ -80,14 +77,14 @@ ActiveRecord::Schema.define(version: 2019_10_02_065513) do
     t.index ["user_id"], name: "index_playlists_on_user_id"
   end
 
-  create_table "singers", force: :cascade do |t|
+  create_table "singers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "songs", force: :cascade do |t|
+  create_table "songs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "singer_id"
     t.string "title"
     t.text "lyrics"
@@ -101,7 +98,7 @@ ActiveRecord::Schema.define(version: 2019_10_02_065513) do
     t.index ["user_id"], name: "index_songs_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "img_url"
@@ -113,7 +110,7 @@ ActiveRecord::Schema.define(version: 2019_10_02_065513) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  create_table "view_logs", force: :cascade do |t|
+  create_table "view_logs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "song_id"
     t.string "log_id"
     t.datetime "created_at", null: false

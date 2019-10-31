@@ -1,0 +1,46 @@
+version: '3.5'
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: '123456'
+    volumes:
+      - ./docker/database:/var/lib/mysql
+    ports:
+      - 3307:3306
+  app:
+    container_name: app
+    build: .
+    volumes:
+      - .:/my_app
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      DATABASE_HOST: $DATABASE_HOST
+      DATABASE_USER_NAME: $DATABASE_USER_NAME
+      DATABASE_PASSWORD: $DATABASE_PASSWORD
+  spring:
+    container_name: spring
+    build: .
+    volumes:
+      - .:/my_app
+    restart: always
+    command: bundle exec spring server
+    environment:
+      DATABASE_HOST: $DATABASE_HOST
+      DATABASE_USER_NAME: $DATABASE_USER_NAME
+      DATABASE_PASSWORD: $DATABASE_PASSWORD
+    # This ensures that the pid namespace is shared between the host
+    # and the container. It's not necessary to be able to run spring
+    # commands, but it is necessary for "spring status" and "spring stop"
+    # to work properly.
+    pid: host
+
+  redis:
+    image: "redis:4.0-alpine"
+    command: redis-server
