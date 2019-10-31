@@ -31,4 +31,4 @@
 /public/uploads/
 
 # Ignore application configuration
-
+/docker/database/
